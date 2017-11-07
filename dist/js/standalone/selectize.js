@@ -223,7 +223,9 @@
 		 */
 		get_field = function(name, result) {
 			if (name === '$score') return result.score;
-			return self.items[result.id][name];
+			if(self.items[result.id]){
+				return self.items[result.id][name];
+			}
 		};
 
 		// parse options
